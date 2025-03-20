@@ -1,21 +1,13 @@
-import express from 'express'
 
-import { Router, Request, Response } from 'express';
+import startConsumidorDeFilas from './mensageria/consumidor';
+import ProcessarPagamento from './processamentos/ProcessarPagamento';
 
-const app = express();
+startConsumidorDeFilas(); // basta não usar o await na função que ela já roda como se fosse numa outra thread
 
-const route = Router()
-
-app.use(express.json())
-
-route.get('/', (req: Request, res: Response) => {
-  res.json({ message: 'hello world with Typescript' })
-})
-
-app.use(route)
-
-app.listen(3333, () => {
-    console.log("server running on port 3333")
-})
-
-// https://dev.to/rogeriorioli/iniciando-um-projeto-nodejs-express-com-typescript-4bfl
+// Testar processamento
+// ProcessarPagamento({
+//     idPedido: 1,
+//     CodigoSegurancaCartao: 123, 
+//     NumeroCartao: "1234 5678 9012 3456", 
+//     DataExpiracaoCartao: "2030-01"
+// });

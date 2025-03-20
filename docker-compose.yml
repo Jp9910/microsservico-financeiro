@@ -1,0 +1,22 @@
+name: ms-financeiro
+
+services:
+  financeiro:
+    image: node:20
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: "yarn install && yarn dev"
+    env_file: ".env"
+    ports:
+      - 3001:3000
+    depends_on:
+      - rabbitmq
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    env_file: ".rabbitmq-container.env"
+    ports:
+      - 5672:5672
+      - 15672:15672

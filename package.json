@@ -14,15 +14,13 @@
   },
   "dependencies": {
     "amqplib": "^0.10.5",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
+    "tsx": "^4.19.2",
     "@types/amqplib": "^0.10.6",
-    "@types/express": "^5.0.0",
     "@types/node": "^22.13.4",
     "typescript": "^5.8.2",
-    "tsx": "^4.19.2"
+    "typescript-eslint": "^8.24.0"
   }
 }
