@@ -10,7 +10,7 @@ export default class Mensageiro {
     canal: amqp.Channel|null = null;
     jaEstaTentandoReconectar = false; // essa flag teria que ser um mutex, mas aí ja foge do escopo do projeto
     jaEstaTentandoRecriarCanal = false;
-    bufferDeMensagens: {status:string}[] = []; // poderia salvar esse buffer num arquivo pra garantir que não vai perder os dados caso o processo caia
+    bufferDeMensagens: {idPedido: number, status:string}[] = []; // poderia salvar esse buffer num arquivo pra garantir que não vai perder os dados caso o processo caia
     fila = "filaStatusProcessamentoPagamento";
     exchange = "exchangePagamentosProcessados";
     tentativaConexao = 0;

@@ -18,9 +18,8 @@
   },
   "devDependencies": {
     "tsx": "^4.19.2",
-    "@types/amqplib": "^0.10.6",
+    "@types/amqplib": "0.10.6",
     "@types/node": "^22.13.4",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.24.0"
+    "typescript": "^5.8.2"
   }
 }
